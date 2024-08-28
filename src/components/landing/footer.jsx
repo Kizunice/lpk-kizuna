@@ -13,7 +13,8 @@ import {
 } from "react-icons/ri"
 import Logo from '../../../public/logo-kizunice-white.png'
 
-export default function Footer() {
+export default function Footer({props}) {
+    console.log(props)
     return (
         <footer className="bg-secondary" id="kontak">
             <div className="max-w-[78rem] mx-auto px-8 py-12 lg:pt-12">
@@ -26,7 +27,7 @@ export default function Footer() {
                         </div>
 
                         <p className="mt-6 max-w-md text-left leading-relaxed text-gray-100 text-[13px] sm:max-w-xs ">
-                        Kizuna Indonesia Nippon adalah lembaga pelatihan yang didedikasikan untuk membantu para pencari kerja mewujudkan impian mereka bekerja di Jepang. . 🇮🇩🇯🇵
+                            {props.description}
                         </p>
 
                         <ul className="mt-4 md:mt-6 flex justify-start gap-4 md:gap-6">
@@ -67,27 +68,27 @@ export default function Footer() {
 
                     <div className="grid grid-cols-1">
                         <div className="text-left">
-                            <p className="text-lg font-medium text-white">Menu</p>
+                            <p className="text-lg font-medium text-white">{props.menu.title}</p>
 
                             <ul className="mt-4 md:mt-8 space-y-4 text-sm">
                                 <li>
                                     <Link className="text-gray-100 transition hover:text-gray-100/75" href="/#tentang">
-                                        Tentang Kizuna
+                                        {props.menu.link1}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="text-gray-100 transition hover:text-gray-100/75" href="/#program">
-                                        Program Kami
+                                        {props.menu.link2}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="text-gray-100 transition hover:text-gray-100/75" href="/#facility">
-                                        Fasilitas LPK
+                                    {props.menu.link3}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="text-gray-100 transition hover:text-gray-100/75" href="/" target="_blank">
-                                        Link Pendaftaran
+                                        {props.menu.link4}
                                     </Link>
                                 </li>
                             </ul>
@@ -95,7 +96,9 @@ export default function Footer() {
                     </div>
 
                     <div className="text-left">
-                            <p className="text-lg font-medium text-white">Kontak Kami</p>
+                            <p className="text-lg font-medium text-white">
+                                {props.kontak.title}
+                            </p>
 
                             <ul className="mt-4 md:mt-8 space-y-4 text-sm">
                                 <li>
@@ -106,7 +109,9 @@ export default function Footer() {
                                     >
                                         <RiMessage2Line fontSize={18} className="text-gray-100" />
 
-                                        <span className="flex-1 text-gray-100">lpkkizunanippon@gmail.com</span>
+                                        <span className="flex-1 text-gray-100">                               
+                                            {props.kontak.email}
+                                        </span>
                                     </Link>
                                 </li>
 
@@ -117,7 +122,10 @@ export default function Footer() {
                                         target="_blank"
                                     >
                                         <RiPhoneLine fontSize={18} className="text-gray-100" />
-                                        <span className="flex-1 text-gray-100">0813 8430 4152</span>
+                                        <span className="flex-1 text-gray-100">
+                                            {props.kontak.phone}
+
+                                        </span>
                                     </Link>
                                 </li>
 
@@ -125,8 +133,7 @@ export default function Footer() {
                                     <RiMapPinLine fontSize={18} className="text-gray-100"/>
 
                                     <address className="-mt-0.5 flex-1 not-italic text-gray-100">
-                                        Jl. Gongseng Raya No.2-4, RT.7/RW.10, Kel. Cijantung, Kec. Ps. Rebo, 
-                                        Kota Jakarta Timur 13770
+                                        {props.kontak.address}
                                     </address>
                                 </li>
                             </ul>
@@ -135,7 +142,7 @@ export default function Footer() {
 
                 <div className="mt-10 border-t border-gray-300 pt-6">
                     <div className="text-center ">
-                        <p className="mt-2 text-sm text-gray-200 sm:order-first sm:mt-0">Copyright &copy; 2024 kizunice.com</p>
+                        <p className="mt-2 text-sm text-gray-200 sm:order-first sm:mt-0">{props.copy}</p>
                     </div>
                 </div>
             </div>

@@ -2,8 +2,6 @@
 import { useEffect,useState } from 'react';
 import { Livvic } from "next/font/google";
 import "@/styles/globals.css"
-import Header from '@/components/landing/header';
-import Footer from '@/components/landing/footer';
 import Head from './head';
 import Loading from "./loading";
 
@@ -13,9 +11,9 @@ const livvic = Livvic({
   subsets: ['latin'] 
 });
 
-export default function RootLayout({ children }) {
-  const [loading, setLoading] = useState(true)
-  
+export default  function RootLayout({children}) {
+  const [loading,setLoading] = useState(true)
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -23,16 +21,12 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="id">
       <Head/>
       <body className={livvic.className}>
-        {loading ? <Loading/> : (
-          <>
-          <Header/>
-            {children}
-          <Footer/>
-          </>
-        )}
+        {
+          loading ? <Loading/> : children
+        }
       </body>
     </html>
   );
