@@ -55,7 +55,7 @@ export default function Header({props}) {
         </div>
         <div className="navbar-end gap-4">
           <select value={currentLang} onChange={handleLangChange}>
-            <option value="id">Indonesia 🇮🇩</option>
+            <option value="id">Bahasa 🇮🇩</option>
             <option value="jp">日本語 🇯🇵</option>
           </select>
           <button 
