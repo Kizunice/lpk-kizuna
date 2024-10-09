@@ -2,6 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation";
+import { HiChevronRight } from "react-icons/hi";
 
 // import Logo from '../../../public/Logo-INA-Icon.png'
 
@@ -26,7 +27,7 @@ export default function Hero({props}) {
                         {subwelcome}
                     </p>
                     <button 
-                        className="relative rounded-xl px-6 py-2 overflow-hidden bg-primary border border-secondary text-white transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-secondary before:duration-300 before:ease-out hover:text-white hover:shadow-primary hover:before:h-40 hover:before:w-40 hover:before:opacity-80"> 
+                        className="relative rounded-md px-4 py-2 overflow-hidden bg-primary text-white transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-secondary before:duration-300 before:ease-out hover:text-white hover:shadow-primary hover:before:h-40 hover:before:w-full"> 
                         <Link 
                             href={`/${lang}`} 
                             class="relative z-10"
@@ -39,7 +40,10 @@ export default function Hero({props}) {
                                 }, 500)
                                 }}
                         >
-                            {button}
+                            <div className="flex flex-row justify-center items-center gap-2">
+                                {button}
+                                <HiChevronRight size={20} className="text-white" />
+                            </div>
                         </Link>
                     </button>
                 </div>

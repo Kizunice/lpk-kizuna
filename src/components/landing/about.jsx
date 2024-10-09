@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image"
 export default function About({props}) {
-    const {title, subtitle} = props
+    const {title, subtitle1, subtitle2, subtitle3} = props
     return (
         <section className="lg:max-w-[80rem] mx-auto py-[4rem] lg:py-[6rem]" id="tentang" >
             <div className="flex flex-col lg:flex-row justify-center items-center">
@@ -13,7 +13,13 @@ export default function About({props}) {
                         {title}
                     </h1>
                     <p className="mx-auto my-6 w-full text-grey ">
-                        {subtitle}
+                        {subtitle1}
+                    </p>
+                    <p className="mx-auto my-6 w-full text-grey ">
+                        {subtitle2}
+                    </p>
+                    <p className="mx-auto my-6 w-full text-grey ">
+                        {subtitle3}
                     </p>
                 </div>
             </div>

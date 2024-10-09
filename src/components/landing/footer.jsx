@@ -6,11 +6,10 @@ import {
     RiFacebookCircleFill,
     RiYoutubeFill,
     RiTiktokFill,
-    RiMapPinLine,
-    RiMessage2Line,
-    RiPhoneLine,
     RiInstagramFill
 } from "react-icons/ri"
+import { MdEmail, MdPhone, MdLocationOn   } from "react-icons/md";
+
 import Logo from '../../../public/logo-kizunice-white.png'
 
 export default function Footer({props}) {
@@ -87,7 +86,10 @@ export default function Footer({props}) {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="text-gray-100 transition hover:text-gray-100/75" href="/" target="_blank">
+                                    <Link 
+                                        className="text-gray-100 transition hover:text-gray-100/75" 
+                                        href="https://bit.ly/Daftarkerjadijepang" 
+                                        target="_blank">
                                         {props.menu.link4}
                                     </Link>
                                 </li>
@@ -107,7 +109,7 @@ export default function Footer({props}) {
                                         href="/"
                                         target="_blank"
                                     >
-                                        <RiMessage2Line fontSize={18} className="text-gray-100" />
+                                        <MdEmail fontSize={18} className="text-gray-100" />
 
                                         <span className="flex-1 text-gray-100">                               
                                             {props.kontak.email}
@@ -121,7 +123,7 @@ export default function Footer({props}) {
                                         href="https://wa.link/r8mojx"
                                         target="_blank"
                                     >
-                                        <RiPhoneLine fontSize={18} className="text-gray-100" />
+                                        <MdPhone fontSize={18} className="text-gray-100" />
                                         <span className="flex-1 text-gray-100">
                                             {props.kontak.phone}
 
@@ -130,7 +132,7 @@ export default function Footer({props}) {
                                 </li>
 
                                 <li className="flex items-start justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end">
-                                    <RiMapPinLine fontSize={18} className="text-gray-100"/>
+                                    <MdLocationOn fontSize={18} className="text-gray-100"/>
 
                                     <address className="-mt-0.5 flex-1 not-italic text-gray-100">
                                         {props.kontak.address}
