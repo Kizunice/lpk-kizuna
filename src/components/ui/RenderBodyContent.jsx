@@ -1,4 +1,3 @@
-import config from "@/sanity/config/client-config";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions,  } from "@sanity/asset-utils";
 import { urlForImage } from "@/sanity/image";
