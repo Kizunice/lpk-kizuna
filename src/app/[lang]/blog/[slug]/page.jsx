@@ -4,6 +4,8 @@ import { urlForImage } from "@/sanity/image";
 import { getPostBySlug } from "@/sanity/client";
 import RenderBodyContent from "@/components/ui/RenderBodyContent";
 
+const dateFormatter = new Intl.DateTimeFormat('id', { weekday: "long", year: "numeric" });
+
 const SingleBlogPage = async ({ params }) => {
   const post = await getPostBySlug(params.slug);
   const imageProps = post?.mainImage
@@ -16,7 +18,7 @@ const SingleBlogPage = async ({ params }) => {
         <h1 className="text-2xl lg:text-4xl text-center font-semibold mb-4">{post.title}</h1>
         <p className="text-center pb-1">
           <span className="font-medium">Published: </span>
-          {new Date(post.publishedAt).toDateString()}
+          {dateFormatter.format(new Date(post.publishedAt).toDateString())}
           <span className="font-medium pl-2">by </span>
           {post.author.name}
         </p>
