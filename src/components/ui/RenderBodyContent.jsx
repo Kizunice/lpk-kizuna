@@ -1,7 +1,7 @@
 import config from "@/sanity/config/client-config";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions,  } from "@sanity/asset-utils";
-import { imageBuilder } from "@/sanity/sanity-utils";
+import { urlForImage } from "@/sanity/image";
 import Image from "next/image";
 
 const ImageComponent = ({ value, isInline }) => {
@@ -10,7 +10,7 @@ const ImageComponent = ({ value, isInline }) => {
     <div className="my-10 overflow-hidden rounded-[15px]">
       <Image
         src={
-            imageBuilder(value.mainImage)
+            urlForImage(value.mainImage)
         }
         width={width}
         height={height}

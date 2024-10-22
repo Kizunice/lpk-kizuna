@@ -1,12 +1,13 @@
 import React from "react";
-import { getPostBySlug, imageBuilder } from "@/sanity/sanity-utils";
+import { getPostBySlug } from "@/sanity/sanity-utils";
 import RenderBodyContent from "@/components/ui/RenderBodyContent";
 import Image from "next/image";
+import { urlForImage } from "@/sanity/image";
 
 const SingleBlogPage = async ({ params }) => {
   const post = await getPostBySlug(params.slug);
   const imageProps = post?.mainImage
-    ? imageBuilder(post?.mainImage)
+    ? urlForImage(post?.mainImage)
     : null;
 
   return (
