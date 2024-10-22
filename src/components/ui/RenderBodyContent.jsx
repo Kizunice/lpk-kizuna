@@ -1,20 +1,16 @@
 import config from "@/sanity/config/client-config";
 import { PortableText } from "@portabletext/react";
-import { getImageDimensions } from "@sanity/asset-utils";
+import { getImageDimensions,  } from "@sanity/asset-utils";
+import { imageBuilder } from "@/sanity/sanity-utils";
 import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image";
 
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-// lazy-loaded image component
 const ImageComponent = ({ value, isInline }) => {
   const { width, height } = getImageDimensions(value);
   return (
     <div className="my-10 overflow-hidden rounded-[15px]">
       <Image
         src={
-            urlForImage(value.mainImage)
+            imageBuilder(value.mainImage)
         }
         width={width}
         height={height}
