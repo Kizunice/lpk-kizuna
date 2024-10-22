@@ -13,7 +13,7 @@ export default function Hero({props}) {
     const {welcome, subwelcome, button} = props
 
     return (
-        <section className="warpper bg-[url('/bg-pattern.jpg')] bg-cover bg-opacity-15" id="beranda" >
+        <section className="bg-[url('/bg-pattern.webp')] bg-cover bg-opacity-15" id="beranda" >
             <div className="flex flex-col bg-white/95 h-[90vh] justify-center items-center">
                 <div className="px-6 text-center mt-[-4em] md:mt-[-2em]">
                     {/* <Link href="/" className='flex justify-center items-center font-bold text-xl tracking-[-6px] text-white tracking-tighter'>

@@ -13,7 +13,6 @@ import { MdEmail, MdPhone, MdLocationOn   } from "react-icons/md";
 import Logo from '../../../public/logo-kizunice-white.png'
 
 export default function Footer({props}) {
-    console.log(props)
     return (
         <footer className="bg-secondary" id="kontak">
             <div className="max-w-[78rem] mx-auto px-8 py-12 lg:pt-12">
@@ -31,7 +30,7 @@ export default function Footer({props}) {
 
                         <ul className="mt-4 md:mt-6 flex justify-start gap-4 md:gap-6">
                             <li>
-                                <Link href="https://www.facebook.com/lpkkizunanippon/" target="_blank">
+                                <Link href="https://www.facebook.com/lpkkizunanippon/" target="_blank" aria-label="Facebook lpk kizuna">
                                     <RiFacebookCircleFill
                                         fontSize={26}
                                         className="text-white transition hover:text-white/75"
@@ -39,7 +38,7 @@ export default function Footer({props}) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://www.youtube.com/@LPKKizunaNippon" target="_blank">
+                                <Link href="https://www.youtube.com/@LPKKizunaNippon" target="_blank" aria-label="Youtube lpk kizuna">
                                     <RiYoutubeFill
                                         fontSize={26}
                                         className="text-white transition hover:text-white/75"
@@ -47,7 +46,7 @@ export default function Footer({props}) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://www.instagram.com/lpkkizunanippon/" target="_blank">
+                                <Link href="https://www.instagram.com/lpkkizunanippon/" target="_blank" aria-label="Instagram lpk kizuna">
                                     <RiInstagramFill
                                         fontSize={26}
                                         className="text-white transition hover:text-white/75"
@@ -55,7 +54,7 @@ export default function Footer({props}) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://www.tiktok.com/@lpk.kizuna" target="_blank">
+                                <Link href="https://www.tiktok.com/@lpk.kizuna" target="_blank" aria-label="Tiktok lpk kizuna">
                                     <RiTiktokFill
                                         fontSize={26}
                                         className="text-white transition hover:text-white/75"
