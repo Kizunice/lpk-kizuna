@@ -4,28 +4,28 @@ import { urlForImage } from "@/sanity/image";
 import { getPostBySlug } from "@/sanity/client";
 import RenderBodyContent from "@/components/ui/RenderBodyContent";
 
-const dateFormatter = new Intl.DateTimeFormat('id', { weekday: "long", year: "numeric" });
+const dateFormatter = new Intl.DateTimeFormat('id', { day: 'numeric', month: 'long', weekday: "long", year: "numeric" });
 
 const SingleBlogPage = async ({ params }) => {
   const post = await getPostBySlug(params.slug);
   const imageProps = post?.mainImage
     ? urlForImage(post?.mainImage)
     : null;
-
+  const date = new Date(post.publishedAt)
   return (
     <article className="lg:max-w-[70rem] mx-auto py-[2rem] lg:py-[6rem] px-8">
       <div className="flex flex-col lg:w-[65%] mx-auto mb-6">
         <h1 className="text-2xl lg:text-4xl text-center font-semibold mb-4">{post.title}</h1>
         <p className="text-center pb-1">
-          <span className="font-medium">Published: </span>
-          {dateFormatter.format(new Date(post.publishedAt).toDateString())}
-          <span className="font-medium pl-2">by </span>
+          <span className="font-medium">Dirilis: </span>
+          {dateFormatter.format(date)}
+          <span className="font-medium pl-2">oleh </span>
           {post.author.name}
         </p>
 
       </div>
 
-      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg mb-4">
+      <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg py-6 mb-12">
         {imageProps && (
           <Image
             priority
