@@ -1,5 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import { getImageDimensions,  } from "@sanity/asset-utils";
+import { getImageDimensions } from "@sanity/asset-utils";
 import { urlForImage } from "@/sanity/image";
 import Image from "next/image";
 
